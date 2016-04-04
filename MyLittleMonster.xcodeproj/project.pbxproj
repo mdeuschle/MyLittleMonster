@@ -13,6 +13,7 @@
 		A8F479841CB196C600557B44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F479831CB196C600557B44 /* Assets.xcassets */; };
 		A8F479871CB196C600557B44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F479851CB196C600557B44 /* LaunchScreen.storyboard */; };
 		A8F4798F1CB1B1FD00557B44 /* DragImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4798E1CB1B1FD00557B44 /* DragImage.swift */; };
+		A8F479911CB1B72C00557B44 /* MonsterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F479901CB1B72C00557B44 /* MonsterImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A8F479861CB196C600557B44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8F479881CB196C600557B44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8F4798E1CB1B1FD00557B44 /* DragImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImage.swift; sourceTree = "<group>"; };
+		A8F479901CB1B72C00557B44 /* MonsterImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A8F4797C1CB196C600557B44 /* AppDelegate.swift */,
 				A8F4797E1CB196C600557B44 /* ViewController.swift */,
 				A8F4798E1CB1B1FD00557B44 /* DragImage.swift */,
+				A8F479901CB1B72C00557B44 /* MonsterImage.swift */,
 				A8F479801CB196C600557B44 /* Main.storyboard */,
 				A8F479831CB196C600557B44 /* Assets.xcassets */,
 				A8F479851CB196C600557B44 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F479911CB1B72C00557B44 /* MonsterImage.swift in Sources */,
 				A8F4797F1CB196C600557B44 /* ViewController.swift in Sources */,
 				A8F4798F1CB1B1FD00557B44 /* DragImage.swift in Sources */,
 				A8F4797D1CB196C600557B44 /* AppDelegate.swift in Sources */,
