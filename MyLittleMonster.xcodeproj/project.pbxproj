@@ -68,11 +68,7 @@
 		A8F4797B1CB196C600557B44 /* MyLittleMonster */ = {
 			isa = PBXGroup;
 			children = (
-				A8F479B41CB31A7500557B44 /* bite.wav */,
-				A8F479B51CB31A7500557B44 /* cave-music.mp3 */,
-				A8F479B61CB31A7500557B44 /* death.wav */,
-				A8F479B71CB31A7500557B44 /* heart.wav */,
-				A8F479B81CB31A7500557B44 /* skull.wav */,
+				A8F479C01CB31B0400557B44 /* SoundFX */,
 				A8F4797C1CB196C600557B44 /* AppDelegate.swift */,
 				A8F4797E1CB196C600557B44 /* ViewController.swift */,
 				A8F4798E1CB1B1FD00557B44 /* DragImage.swift */,
@@ -83,6 +79,18 @@
 				A8F479881CB196C600557B44 /* Info.plist */,
 			);
 			path = MyLittleMonster;
+			sourceTree = "<group>";
+		};
+		A8F479C01CB31B0400557B44 /* SoundFX */ = {
+			isa = PBXGroup;
+			children = (
+				A8F479B41CB31A7500557B44 /* bite.wav */,
+				A8F479B51CB31A7500557B44 /* cave-music.mp3 */,
+				A8F479B61CB31A7500557B44 /* death.wav */,
+				A8F479B71CB31A7500557B44 /* heart.wav */,
+				A8F479B81CB31A7500557B44 /* skull.wav */,
+			);
+			name = SoundFX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
