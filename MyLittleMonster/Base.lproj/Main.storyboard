@@ -21,8 +21,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-YO-ETC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ground" translatesAutoresizingMaskIntoConstraints="NO" id="9pD-Kk-71d">
-                                <rect key="frame" x="0.0" y="539" width="375" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ground" translatesAutoresizingMaskIntoConstraints="NO" id="9pD-Kk-71d">
+                                <rect key="frame" x="0.0" y="586" width="375" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="OIr-RG-7WD"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livespanel" translatesAutoresizingMaskIntoConstraints="NO" id="a5F-iV-643">
                                 <rect key="frame" x="43" y="8" width="288" height="102"/>
@@ -77,22 +80,38 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idle1" translatesAutoresizingMaskIntoConstraints="NO" id="NMv-o5-QAz" customClass="MonsterImage" customModule="MyLittleMonster" customModuleProvider="target">
-                                <rect key="frame" x="-4" y="138" width="455" height="516"/>
+                                <rect key="frame" x="-20" y="78" width="479" height="516"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="455" id="7U4-sY-shZ"/>
-                                    <constraint firstAttribute="height" constant="516" id="aaA-Bd-qzG"/>
+                                    <constraint firstAttribute="height" constant="516" id="RvJ-JH-m0u"/>
+                                    <constraint firstAttribute="width" constant="479" id="wam-ca-YKF"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8x-D8-GH4">
+                                <rect key="frame" x="65" y="269" width="244" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="244" id="Ig3-Fe-X4v"/>
+                                    <constraint firstAttribute="height" constant="130" id="gvl-t2-os8"/>
+                                </constraints>
+                                <state key="normal" image="PlayAgain"/>
+                                <connections>
+                                    <action selector="startOverButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JaZ-HQ-dKX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9pD-Kk-71d" secondAttribute="bottom" id="5N3-p5-ldE"/>
                             <constraint firstItem="a5F-iV-643" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ju-ir-bdi"/>
                             <constraint firstItem="a5F-iV-643" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="8" id="92C-iw-ddw"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NMv-o5-QAz" secondAttribute="bottom" constant="13" id="O8D-ao-zCM"/>
+                            <constraint firstItem="V8x-D8-GH4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dah-oT-sTg"/>
+                            <constraint firstAttribute="trailing" secondItem="9pD-Kk-71d" secondAttribute="trailing" id="DyG-Cc-49c"/>
+                            <constraint firstItem="V8x-D8-GH4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MHs-aG-Y8I"/>
                             <constraint firstItem="QaI-iA-A6K" firstAttribute="centerX" secondItem="a5F-iV-643" secondAttribute="centerX" id="Pz1-RN-aLn"/>
+                            <constraint firstItem="NMv-o5-QAz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-36" id="XaT-JV-BaD"/>
                             <constraint firstItem="he0-dO-elO" firstAttribute="top" secondItem="a5F-iV-643" secondAttribute="bottom" constant="8" id="ijF-Zf-jC2"/>
+                            <constraint firstItem="9pD-Kk-71d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mg7-3C-Y8Q"/>
                             <constraint firstItem="he0-dO-elO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sGz-vl-6fo"/>
-                            <constraint firstItem="NMv-o5-QAz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="yrh-c0-lVS"/>
+                            <constraint firstItem="NMv-o5-QAz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="58" id="tgX-Xe-xuA"/>
                             <constraint firstItem="QaI-iA-A6K" firstAttribute="centerY" secondItem="a5F-iV-643" secondAttribute="centerY" id="zh3-s3-0L6"/>
                         </constraints>
                     </view>
@@ -104,14 +123,16 @@
                         <outlet property="penalty1Image" destination="OtV-Pv-C3Z" id="fMx-qX-KVI"/>
                         <outlet property="penalty2Image" destination="uJz-oz-jYe" id="8mN-jP-jZe"/>
                         <outlet property="penalty3Image" destination="Bdj-mr-6u0" id="gb7-xi-Ec4"/>
+                        <outlet property="startOverButton" destination="V8x-D8-GH4" id="ygY-Ns-wjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247.5" y="398.5"/>
+            <point key="canvasLocation" x="197.5" y="542.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="PlayAgain" width="218" height="108"/>
         <image name="bg" width="768" height="1024"/>
         <image name="food" width="95" height="98"/>
         <image name="ground" width="1444" height="151"/>

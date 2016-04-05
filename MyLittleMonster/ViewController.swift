@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet var penalty1Image: UIImageView!
     @IBOutlet var penalty2Image: UIImageView!
     @IBOutlet var penalty3Image: UIImageView!
+    @IBOutlet var startOverButton: UIButton!
 
     let dimAlpha: CGFloat = 0.2
     let opaque: CGFloat = 1.0
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
 
     var currentPenalties = 0
     var timer: NSTimer!
+    var startOverTimer: NSTimer!
     var monsterHappy = false
     var currentItem: UInt32 = 0
 
@@ -39,10 +41,6 @@ class ViewController: UIViewController {
 
         foodImg.dropTarget = monsterImg
         heartImg.dropTarget = monsterImg
-
-        penalty1Image.alpha = dimAlpha
-        penalty2Image.alpha = dimAlpha
-        penalty3Image.alpha = dimAlpha
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.itemDroppedOnCharacter(_:)), name: "onTargetDropped", object: nil)
 
@@ -69,12 +67,28 @@ class ViewController: UIViewController {
             sfxSkull.prepareToPlay()
 
         } catch let err as NSError {
-
+            
             print(err.debugDescription)
         }
 
-        startTimer()
+        newGame()
+    }
 
+    func newGame() {
+
+        heartImg.hidden = false
+        foodImg.hidden = false
+
+        startOverButton.hidden = true
+        currentPenalties = 0
+
+        monsterImg.playIdleAnimation()
+
+        penalty1Image.alpha = dimAlpha
+        penalty2Image.alpha = dimAlpha
+        penalty3Image.alpha = dimAlpha
+        
+        startTimer()
     }
 
     func itemDroppedOnCharacter(notif: AnyObject) {
@@ -96,7 +110,6 @@ class ViewController: UIViewController {
 
             sfxBite.play()
         }
-
     }
 
     func startTimer() {
@@ -105,7 +118,7 @@ class ViewController: UIViewController {
             timer.invalidate()
         }
 
-        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.changeGameState), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(ViewController.changeGameState), userInfo: nil, repeats: true)
     }
 
     func changeGameState() {
@@ -174,6 +187,21 @@ class ViewController: UIViewController {
         timer.invalidate()
         monsterImg.playDeathAnimation()
         sfxDeath.play()
+        heartImg.hidden = true
+        foodImg.hidden = true
+
+        startOverTimer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(ViewController.startOver), userInfo: nil, repeats: false)
     }
+
+    func startOver() {
+
+        startOverButton.hidden = false
+    }
+
+    @IBAction func startOverButtonPressed(sender: AnyObject) {
+
+        newGame()
+    }
+    
 }
 
